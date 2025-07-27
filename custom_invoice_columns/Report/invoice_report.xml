@@ -1,0 +1,21 @@
+<odoo>
+  <template id="custom_invoice_columns_report_inherit" inherit_id="account.account_invoices">
+    <xpath expr="//thead/tr" position="inside">
+      <th>Previous</th>
+      <th>New</th>
+      <th>Actual</th>
+    </xpath>
+
+    <xpath expr="//tbody/tr/td[1]" position="before">
+      <td>
+        <span t-field="line.previous_reading"/>
+      </td>
+      <td>
+        <span t-field="line.new_reading"/>
+      </td>
+      <td>
+        <span t-field="line.actual_usage"/>
+      </td>
+    </xpath>
+  </template>
+</odoo>
